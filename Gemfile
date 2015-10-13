@@ -28,7 +28,7 @@ group :production do
 end
 
 gem 'bootstrap-sass'
-gem 'bootswatch-rails'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'bootswatch-rails'
