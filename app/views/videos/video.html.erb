@@ -1,0 +1,15 @@
+<div class="well">
+  <%= simple_form_for @new_video, html: { class: 'form-inline' } do |f| %>
+  <%= f.input :video_url, label: false, placeholder: "Enter your favourite short film URL", autofocus: true %>
+  <%= f.submit "Create Video", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<% @videos.each do |video| %>
+  <div class="container">
+    <div class="row">
+      <h3>Name</h3>
+      <iframe width="500" height="265" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+<% end %>
