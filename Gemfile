@@ -32,3 +32,4 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'bootswatch-rails'
+gem 'simple_form'

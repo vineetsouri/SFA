@@ -12,6 +12,9 @@
     <%= flash_tag(notice, "notice") %>
     <%= flash_tag(alert, "alert") %>
 </div>
+<% if user_signed_in? %>
+  <%= render('common/header') %>
+<% end %>
 <%= yield %>
 
 </body>
