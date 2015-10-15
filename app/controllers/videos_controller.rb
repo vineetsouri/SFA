@@ -9,7 +9,10 @@ class VideosController < ApplicationController
 
   def create
     @videos = current_user.videos.all
-    @video = current_user.videos.new(video_params)
+    ab = video_params
+    a = ab["video_url"].split("watch?v=")
+    ab["video_url"] = a[0] + "embed/" + a[1]
+    @video = current_user.videos.new(ab)
     @video.save!
     @new_video = current_user.videos.new
     render "video"
@@ -17,6 +20,6 @@ class VideosController < ApplicationController
 
 private
   def video_params
-    params.require(:video).permit(:video_url)
+    params.require(:video).permit(:video_name, :video_url)
   end
 end
